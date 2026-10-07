@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Mayssa — Design graphique & création visuelle</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@500;600&display=swap');
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: #f7f8fc;
+      color: #101828;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* NAVIGATION */
+
+    nav {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 40px);
+      max-width: 1100px;
+      padding: 14px 22px;
+      background: rgba(255,255,255,0.82);
+      backdrop-filter: blur(15px);
+      border: 1px solid #e7eaf2;
+      border-radius: 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 18px;
+      color: #175cff;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      font-size: 14px;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 100vh;
+      max-width: 1200px;
+      margin: auto;
+      padding: 160px 40px 100px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .little-tag {
+      display: inline-block;
+      width: fit-content;
+      padding: 8px 14px;
+      border-radius: 30px;
+      background: #e8efff;
+      color: #175cff;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 25px;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(55px, 9vw, 120px);
+      line-height: 0.95;
+      max-width: 950px;
+      font-weight: 500;
+      letter-spacing: -4px;
+    }
+
+    h1 span {
+      color: #175cff;
+      font-style: italic;
+    }
+
+    .hero-text {
+      max-width: 560px;
+      margin-top: 35px;
+      font-size: 18px;
+      color: #667085;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 15px;
+      margin-top: 35px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      padding: 14px 22px;
+      border-radius: 30px;
+      background: #175cff;
+      color: white;
+      font-weight: 700;
+      transition: 0.3s;
+    }
+
+    .button:hover {
+      transform: translateY(-3px);
+      background: #0c42c9;
+    }
+
+    .button.secondary {
+      background: white;
+      color: #101828;
+      border: 1px solid #dfe3ec;
+    }
+
+    /* DECORATION */
+
+    .shape {
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: #ffcf4a;
+      right: 8%;
+      top: 25%;
+      z-index: -1;
+      animation: float 5s ease-in-out infinite;
+    }
+
+    .shape-two {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background: #ff6b9d;
+      border-radius: 25px;
+      right: 20%;
+      bottom: 15%;
+      transform: rotate(20deg);
+      animation: rotate 8s linear infinite;
+    }
+
+    @keyframes float {
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+
+    @keyframes rotate {
+      50% {
+        transform: rotate(200deg);
+      }
+    }
+
+    /* SECTIONS */
+
+    section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 110px 40px;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 55px;
+      margin-bottom: 50px;
+      font-weight: 500;
+    }
+
+    .section-title span {
+      color: #175cff;
+    }
+
+    /* PROJECTS */
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    .project {
+      min-height: 390px;
+      padding: 35px;
+      border-radius: 30px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      transition: 0.4s;
+    }
+
+    .project:hover {
+      transform: translateY(-8px);
+    }
+
+    .project.one {
+      background: #dce8ff;
+    }
+
+    .project.two {
+      background: #ffe3ed;
+    }
+
+    .project.three {
+      background: #fff0bd;
+    }
+
+    .project.four {
+      background: #dff5e8;
+    }
+
+    .project-number {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      font-size: 14px;
+      font-weight: 700;
+      opacity: 0.5;
+    }
+
+    .project h3 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .project p {
+      max-width: 430px;
+      color: #475467;
+    }
+
+    .project-label {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+      color: #175cff;
+    }
+
+    /* ABOUT */
+
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .about-text {
+      font-size: 19px;
+      color: #667085;
+    }
+
+    .about-text strong {
+      color: #101828;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 30px;
+    }
+
+    .skill {
+      padding: 10px 16px;
+      border: 1px solid #dfe3ec;
+      border-radius: 30px;
+      background: white;
+      font-size: 14px;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      background: #101828;
+      color: white;
+      max-width: none;
+      text-align: center;
+      padding: 120px 40px;
+    }
+
+    .contact h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(45px, 7vw, 85px);
+      font-weight: 500;
+    }
+
+    .contact p {
+      margin: 20px auto 35px;
+      color: #b7c0d1;
+      max-width: 500px;
+    }
+
+    .contact .button {
+      display: inline-block;
+    }
+
+    footer {
+      background: #101828;
+      color: #8d98ab;
+      text-align: center;
+      padding: 25px;
+      font-size: 13px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 700px) {
+
+      nav {
+        width: calc(100% - 25px);
+      }
+
+      .nav-links {
+        gap: 12px;
+        font-size: 12px;
+      }
+
+      .hero,
+      section {
+        padding-left: 22px;
+        padding-right: 22px;
+      }
+
+      h1 {
+        letter-spacing: -2px;
+      }
+
+      .shape {
+        width: 110px;
+        height: 110px;
+        right: 5%;
+      }
+
+      .projects,
+      .about {
+        grid-template-columns: 1fr;
+      }
+
+      .section-title {
+        font-size: 45px;
+      }
+
+      .project {
+        min-height: 320px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <a href="#" class="logo">M.</a>
+
+    <div class="nav-links">
+      <a href="#projets">Projets</a>
+      <a href="#apropos">À propos</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+
+  <main>
+
+    <!-- ACCUEIL -->
+
+    <div class="hero">
+
+      <div class="shape"></div>
+      <div class="shape-two"></div>
+
+      <div class="little-tag">
+        Portfolio 2026
+      </div>
+
+      <h1>
+        Mayssa,<br>
+        je crée des idées<br>
+        <span>qui prennent vie.</span>
+      </h1>
+
+      <p class="hero-text">
+        Je m'intéresse au design graphique, aux univers visuels
+        et à la création d'expériences numériques simples,
+        utiles et sensibles.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#projets" class="button">
+          Découvrir mes projets →
+        </a>
+
+        <a href="#apropos" class="button secondary">
+          À propos de moi
+        </a>
+      </div>
+
+    </div>
+
+
+    <!-- PROJETS -->
+
+    <section id="projets">
+
+      <h2 class="section-title">
+        Mes <span>projets.</span>
+      </h2>
+
+      <div class="projects">
+
+        <article class="project one">
+
+          <span class="project-number">01</span>
+
+          <div>
+            <div class="project-label">
+              UX / UI — Figma
+            </div>
+
+            <h3>Run & Flow</h3>
+
+            <p>
+              Imaginer une expérience mobile pour accompagner
+              les coureurs dans leur entraînement,
+              de la préparation jusqu'au suivi des performances.
+            </p>
+          </div>
+
+        </article>
+
+
+        <article class="project two">
+
+          <span class="project-number">02</span>
+
+          <div>
+            <div class="project-label">
+              Identité visuelle
+            </div>
+
+            <h3>Maison Moka</h3>
+
+            <p>
+              Création de l'univers graphique d'un café fictif :
+              identité, couleurs, typographies, packaging
+              et communication digitale.
+            </p>
+          </div>
+
+        </article>
+
+
+        <article class="project three">
+
+          <span class="project-number">03</span>
+
+          <div>
+            <div class="project-label">
+              Design d'espace
+            </div>
+
+            <h3>10 m²</h3>
+
+            <p>
+              Transformer une petite chambre en un espace
+              fonctionnel réunissant sommeil, travail
+              et personnalité.
+            </p>
+          </div>
+
+        </article>
+
+
+        <article class="project four">
+
+          <span class="project-number">04</span>
+
+          <div>
+            <div class="project-label">
+              Branding
+            </div>
+
+            <h3>NOMA</h3>
+
+            <p>
+              Imaginer une marque de snacks pensée pour
+              les sportifs : concept, packaging,
+              identité et direction artistique.
+            </p>
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- À PROPOS -->
+
+    <section id="apropos">
+
+      <div class="about">
+
+        <div>
+          <h2 class="section-title">
+            À propos<br>
+            <span>de moi.</span>
+          </h2>
+        </div>
+
+        <div>
+
+          <p class="about-text">
+            Je suis <strong>Mayssa</strong>, une créative attirée
+            par les projets qui mélangent réflexion,
+            esthétique et utilité.
+            <br><br>
+            Mon parcours m'a amenée à m'intéresser au design
+            d'espace et aujourd'hui au <strong>design graphique
+            et numérique</strong>.
+            <br><br>
+            J'aime observer, imaginer, expérimenter et
+            transformer une idée en une expérience visuelle.
+          </p>
+
+          <div class="skills">
+            <span class="skill">Créativité</span>
+            <span class="skill">Design graphique</span>
+            <span class="skill">Figma</span>
+            <span class="skill">Identité visuelle</span>
+            <span class="skill">UX / UI</span>
+            <span class="skill">Design d'espace</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section class="contact" id="contact">
+
+      <h2>
+        Une idée<br>
+        à créer ?
+      </h2>
+
+      <p>
+        Je suis toujours curieuse de découvrir
+        de nouveaux projets et de nouvelles idées.
+      </p>
+
+      <a href="mailto:tonemail@email.com" class="button">
+        Me contacter →
+      </a>
+
+    </section>
+
+  </main>
+
+
+  <footer>
+    © 2026 Mayssa — Portfolio
+  </footer>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Mayssa — Design graphique & création visuelle</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@500;600&display=swap');
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: #f7f8fc;
+      color: #101828;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* NAVIGATION */
+
+    nav {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 40px);
+      max-width: 1100px;
+      padding: 14px 22px;
+      background: rgba(255,255,255,0.82);
+      backdrop-filter: blur(15px);
+      border: 1px solid #e7eaf2;
+      border-radius: 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 18px;
+      color: #175cff;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      font-size: 14px;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 100vh;
+      max-width: 1200px;
+      margin: auto;
+      padding: 160px 40px 100px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .little-tag {
+      display: inline-block;
+      width: fit-content;
+      padding: 8px 14px;
+      border-radius: 30px;
+      background: #e8efff;
+      color: #175cff;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 25px;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(55px, 9vw, 120px);
+      line-height: 0.95;
+      max-width: 950px;
+      font-weight: 500;
+      letter-spacing: -4px;
+    }
+
+    h1 span {
+      color: #175cff;
+      font-style: italic;
+    }
+
+    .hero-text {
+      max-width: 560px;
+      margin-top: 35px;
+      font-size: 18px;
+      color: #667085;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 15px;
+      margin-top: 35px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      padding: 14px 22px;
+      border-radius: 30px;
+      background: #175cff;
+      color: white;
+      font-weight: 700;
+      transition: 0.3s;
+    }
+
+    .button:hover {
+      transform: translateY(-3px);
+      background: #0c42c9;
+    }
+
+    .button.secondary {
+      background: white;
+      color: #101828;
+      border: 1px solid #dfe3ec;
+    }
+
+    /* DECORATION */
+
+    .shape {
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: #ffcf4a;
+      right: 8%;
+      top: 25%;
+      z-index: -1;
+      animation: float 5s ease-in-out infinite;
+    }
+
+    .shape-two {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background: #ff6b9d;
+      border-radius: 25px;
+      right: 20%;
+      bottom: 15%;
+      transform: rotate(20deg);
+      animation: rotate 8s linear infinite;
+    }
+
+    @keyframes float {
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+
+    @keyframes rotate {
+      50% {
+        transform: rotate(200deg);
+      }
+    }
+
+    /* SECTIONS */
+
+    section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 110px 40px;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 55px;
+      margin-bottom: 50px;
+      font-weight: 500;
+    }
+
+    .section-title span {
+      color: #175cff;
+    }
+
+    /* PROJECTS */
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    .project {
+      min-height: 390px;
+      padding: 35px;
+      border-radius: 30px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      transition: 0.4s;
+    }
+
+    .project:hover {
+      transform: translateY(-8px);
+    }
+
+    .project.one {
+      background: #dce8ff;
+    }
+
+    .project.two {
+      background: #ffe3ed;
+    }
+
+    .project.three {
+      background: #fff0bd;
+    }
+
+    .project.four {
+      background: #dff5e8;
+    }
+
+    .project-number {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      font-size: 14px;
+      font-weight: 700;
+      opacity: 0.5;
+    }
+
+    .project h3 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .project p {
+      max-width: 430px;
+      color: #475467;
+    }
+
+    .project-label {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+      color: #175cff;
+    }
+
+    /* ABOUT */
+
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .about-text {
+      font-size: 19px;
+      color: #667085;
+    }
+
+    .about-text strong {
+      color: #101828;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 30px;
+    }
+
+    .skill {
+      padding: 10px 16px;
+      border: 1px solid #dfe3ec;
+      border-radius: 30px;
+      background: white;
+      font-size: 14px;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      background: #101828;
+      color: white;
+      max-width: none;
+      text-align: center;
+      padding: 120px 40px;
+    }
+
+    .contact h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(45px, 7vw, 85px);
+      font-weight: 500;
+    }
+
+    .contact p {
+      margin: 20px auto 35px;
+      color: #b7c0d1;
+      max-width: 500px;
+    }
+
+    .contact .button {
+      display: inline-block;
+    }
+
+    footer {
+      background: #101828;
+      color: #8d98ab;
+      text-align: center;
+      padding: 25px;
+      font-size: 13px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 700px) {
+
+      nav {
+        width: calc(100% - 25px);
+      }
+
+      .nav-links {
+        gap: 12px;
+        font-size: 12px;
+      }
+
+      .hero,
+      section {
+        padding-left: 22px;
+        padding-right: 22px;
+      }
+
+      h1 {
+        letter-spacing: -2px;
+      }
+
+      .shape {
+        width: 110px;
+        height: 110px;
+        right: 5%;
+      }
+
+      .projects,
+      .about {
+        grid-template-columns: 1fr;
+      }
+
+      .section-title {
+        font-size: 45px;
+      }
+
+      .project {
+        min-height: 320px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <a href="#" class="logo">M.</a>
+
+    <div class="nav-links">
+      <a href="#projets">Projets</a>
+      <a href="#apropos">À propos</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+
+  <main>
+
+    <!-- ACCUEIL -->
+
+    <div class="hero">
+
+      <div class="shape"></div>
+      <div class="shape-two"></div>
+
+      <div class="little-tag">
+        Portfolio 2026
+      </div>
+
+      <h1>
+        Mayssa,<br>
+        je crée des idées<br>
+        <span>qui prennent vie.</span>
+      </h1>
+
+      <p class="hero-text">
+        Je m'intéresse au design graphique, aux univers visuels
+        et à la création d'expériences numériques simples,
+        utiles et sensibles.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#projets" class="button">
+          Découvrir mes projets →
+        </a>
+
+        <a href="#apropos" class="button secondary">
+          À propos de moi
+        </a>
+      </div>
+
+    </div>
+
+
+    <!-- PROJETS -->
+
+    <section id="projets">
+
+      <h2 class="section-title">
+        Mes <span>projets.</span>
+      </h2>
+
+      <div class="projects">
+
+        <article class="project one">
+
+          <span class="project-number">01</span>
+
+          <div>
+            <div class="project-label">
+              UX / UI — Figma
+            </div>
+
+            <h3>Run & Flow</h3>
+
+            <p>
+              Imaginer une expérience mobile pour accompagner
+              les coureurs dans leur entraînement,
+              de la préparation jusqu'au suivi des performances.
+            </p>
+          </div>
+
+        </article>
+
+
+        <article class="project two">
+
+          <span class="project-number">02</span>
+
+          <div>
+            <div class="project-label">
+              Identité visuelle
+            </div>
+
+            <h3>Maison Moka</h3>
+
+            <p>
+              Création de l'univers graphique d'un café fictif :
+              identité, couleurs, typographies, packaging
+              et communication digitale.
+            </p>
+          </div>
+
+        </article>
+
+
+        <article class="project three">
+
+          <span class="project-number">03</span>
+
+          <div>
+            <div class="project-label">
+              Design d'espace
+            </div>
+
+            <h3>10 m²</h3>
+
+            <p>
+              Transformer une petite chambre en un espace
+              fonctionnel réunissant sommeil, travail
+              et personnalité.
+            </p>
+          </div>
+
+        </article>
+
+
+        <article class="project four">
+
+          <span class="project-number">04</span>
+
+          <div>
+            <div class="project-label">
+              Branding
+            </div>
+
+            <h3>NOMA</h3>
+
+            <p>
+              Imaginer une marque de snacks pensée pour
+              les sportifs : concept, packaging,
+              identité et direction artistique.
+            </p>
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- À PROPOS -->
+
+    <section id="apropos">
+
+      <div class="about">
+
+        <div>
+          <h2 class="section-title">
+            À propos<br>
+            <span>de moi.</span>
+          </h2>
+        </div>
+
+        <div>
+
+          <p class="about-text">
+            Je suis <strong>Mayssa</strong>, une créative attirée
+            par les projets qui mélangent réflexion,
+            esthétique et utilité.
+            <br><br>
+            Mon parcours m'a amenée à m'intéresser au design
+            d'espace et aujourd'hui au <strong>design graphique
+            et numérique</strong>.
+            <br><br>
+            J'aime observer, imaginer, expérimenter et
+            transformer une idée en une expérience visuelle.
+          </p>
+
+          <div class="skills">
+            <span class="skill">Créativité</span>
+            <span class="skill">Design graphique</span>
+            <span class="skill">Figma</span>
+            <span class="skill">Identité visuelle</span>
+            <span class="skill">UX / UI</span>
+            <span class="skill">Design d'espace</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section class="contact" id="contact">
+
+      <h2>
+        Une idée<br>
+        à créer ?
+      </h2>
+
+      <p>
+        Je suis toujours curieuse de découvrir
+        de nouveaux projets et de nouvelles idées.
+      </p>
+
+      <a href="mailto:tonemail@email.com" class="button">
+        Me contacter →
+      </a>
+
+    </section>
+
+  </main>
+
+
+  <footer>
+    © 2026 Mayssa — Portfolio
+  </footer>
+
+</body>
+</html>
